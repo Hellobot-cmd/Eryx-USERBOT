@@ -9,7 +9,7 @@ import aiofiles
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from reportlab.graphics import renderPM
-from svglib.svglib import svg2rlg
+
 
 from Zaid.helper.PyroHelpers import ReplyCheck
 from Zaid.helper.aiohttp_helper import AioHttp
@@ -37,7 +37,7 @@ async def commit_graph(bot: Client, message: Message):
     await f.close()
 
     try:
-        drawing = svg2rlg(f"{file_name}.svg")
+        drawing = None
         renderPM.drawToFile(drawing, f"{file_name}.png")
     except UnboundLocalError:
         await message.edit("Username does not exist!")
