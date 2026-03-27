@@ -12,7 +12,8 @@ clients = []
 ids = []
 
 SUDO_USERS.append(OWNER_ID)
-aiosession = ClientSession()
+aiosession = None
+ids.append(OWNER_ID)
 
 if API_ID:
    API_ID = API_ID
